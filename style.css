@@ -278,8 +278,8 @@ body {
 @media screen and (max-width: 425px) {
   .three-rows:nth-child(1) .two-coloumns:nth-child(2) .pop-out-selection {
     border-image-source: linear-gradient(
-      #222222 10%,
-      rgba(11, 255, 0, 0.4) 11%
+      #222222 12%,
+      rgba(11, 255, 0, 0.4) 13%
     );
   }
 }
