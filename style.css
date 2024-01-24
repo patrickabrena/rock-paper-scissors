@@ -168,8 +168,8 @@ body {
   text-align: center;
 }
 .pop-out-selection > * p {
-  padding: 0%;
-  margin: 5% 0%;
+  padding: 0px;
+  margin: 8px 0px;
 }
 .three-rows:nth-child(1)
   .two-coloumns:nth-child(2)
