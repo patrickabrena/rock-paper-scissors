@@ -134,6 +134,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const caretClosedColourGreen = "6px solid rgba(11, 255, 0, 1)";
     const caretClosedColourBlue = "6px solid rgba(0, 246, 255, 1)";
 
+    //.mid-main-seg and border-right .two-coloumns
+    const thinLineColourRed = "solid rgba(255, 0, 0, 0.2) 1px";
+    const thinLineColourOrange = "solid rgba(255, 172, 0, 0.2) 1px";
+    const thinLineColourYellow = "solid rgba(255, 241, 0, 0.2) 1px";
+    const thinLineColourGreen = "solid rgba(11, 255, 0, 0.2) 1px";
+    const thinLineColourBlue = "solid rgba(0, 246, 255, 0.2) 1px";
+
+    //.changeable-background
+    const backdropColourRed = "rgba(255, 0, 0, 0.1)";
+    const backdropColourOrange = "rgba(255, 172, 0, 0.1)";
+    const backdropColourYellow = "rgba(255, 241, 0, 0.1)";
+    const backdropColourGreen = "rgba(11, 255, 0, 0.1)";
+    const backdropColourBlue = "rgba(0, 246, 255, 0.1)";
+
     //Array of class names to target with functions below
     const classNames = [
       ".coloured-background",
@@ -144,6 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
       ".pop-out-selection",
       ".theme-toggle",
       ".caret",
+      ".mid-main-seg",
+      ".two-coloumns:nth-child(1)",
+      ".changeable-background",
     ];
     const switchBackgroundColour = (backgroundTargetColour) => {
       const myNodeList = document.querySelectorAll(classNames[0]);
@@ -194,6 +211,24 @@ document.addEventListener("DOMContentLoaded", function () {
         myNodeList[i].style.borderRight = targetColour;
       }
     };
+    const midMainSegthinLineColour = (targetColour) => {
+      const myNodeList = document.querySelectorAll(classNames[8]);
+      for (let i = 0; i < myNodeList.length; i++) {
+        myNodeList[i].style.border = targetColour;
+      }
+    };
+    const twoColoumnThinLineColour = (targetColour) => {
+      const myNodeList = document.querySelectorAll(classNames[9]);
+      for (let i = 0; i < myNodeList.length; i++) {
+        myNodeList[i].style.borderRight = targetColour;
+      }
+    };
+    const backdropColour = (targetColour) => {
+      const myNodeList = document.querySelectorAll(classNames[10]);
+      for (let i = 0; i < myNodeList.length; i++) {
+        myNodeList[i].style.backgroundColor = targetColour;
+      }
+    };
 
     //button on click sections
     const RedBtn = document.getElementById("red");
@@ -206,6 +241,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leftBorderColour(leftBorderColourRed);
       themeToggleBorderColour(themeToggleBorderColourRed);
       caretClosedColour(caretClosedColourRed);
+      midMainSegthinLineColour(thinLineColourRed);
+      twoColoumnThinLineColour(thinLineColourRed);
+      backdropColour(backdropColourRed);
     };
 
     const OrangeBtn = document.getElementById("orange");
@@ -218,6 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leftBorderColour(leftBorderColourOrange);
       themeToggleBorderColour(themeToggleBorderColourOrange);
       caretClosedColour(caretClosedColourOrange);
+      midMainSegthinLineColour(thinLineColourOrange);
+      twoColoumnThinLineColour(thinLineColourOrange);
+      backdropColour(backdropColourOrange);
     };
 
     const YellowBtn = document.getElementById("yellow");
@@ -230,6 +271,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leftBorderColour(leftBorderColourYellow);
       themeToggleBorderColour(themeToggleBorderColourYellow);
       caretClosedColour(caretClosedColourYellow);
+      midMainSegthinLineColour(thinLineColourYellow);
+      twoColoumnThinLineColour(thinLineColourYellow);
+      backdropColour(backdropColourYellow);
     };
 
     const GreenBtn = document.getElementById("green");
@@ -242,6 +286,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leftBorderColour(leftBorderColourGreen);
       themeToggleBorderColour(themeToggleBorderColourGreen);
       caretClosedColour(caretClosedColourGreen);
+      midMainSegthinLineColour(thinLineColourGreen);
+      twoColoumnThinLineColour(thinLineColourGreen);
+      backdropColour(backdropColourGreen);
     };
 
     const BlueBtn = document.getElementById("blue");
@@ -254,6 +301,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leftBorderColour(leftBorderColourBlue);
       themeToggleBorderColour(themeToggleBorderColourBlue);
       caretClosedColour(caretClosedColourBlue);
+      midMainSegthinLineColour(thinLineColourBlue);
+      twoColoumnThinLineColour(thinLineColourBlue);
+      backdropColour(backdropColourBlue);
     };
     //end of colour extract and change
     /* */
