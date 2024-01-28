@@ -23,72 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //end of togglebuttonfunction//
     /** **/
     /** **/
-    /** **/
-    /** **/
-    /** **/
-    /*attempt at optimized version of this */
-    // const colourThemeFunc = () => {
-    //   const testFunction = (colour, cssValues, targetClass, targetStyle) => {
-    //     const colourThemes = {
-    //       red: "255, 0, 0",
-    //       orange: "255, 172, 0",
-    //       yellow: "255, 241, 0",
-    //       green: "11, 255, 0",
-    //       blue: "0, 246, 255",
-    //     };
 
-    //     const { red, orange, yellow, green, blue } = colourThemes;
-    //     //orange, yellow, green, blue
-    //     const rgbaColour = (colour) => {
-    //       const rgbaValues = {
-    //         backgroundRgba: `rgba(${colour}, 0.1)`,
-    //         plainRgba: `rgba(${colour}, 1)`,
-    //         boldLineRgba: `solid rgba(${colour}, 0.6) 3px`,
-    //         thinLineRgba: `solid rgba(${colour}, 0.4) 2px`,
-    //         dottedlineRgba: `dotted rgba(${colour}, 0.2) 1px`,
-    //       };
-    //     };
-
-    //     const classNames = [
-    //       ".coloured-background",
-    //       ".text-rows",
-    //       ".three-row-container",
-    //       ".three-rows:nth-child(1)",
-    //       ".three-rows:nth-child(3)",
-    //     ];
-
-    //     //isolated function to handle all the node list stuff
-    //     // const testFunction = (colour) => {
-
-    //     const myNodeList = document.querySelectorAll(targetClass);
-    //     for (let i = 0; i < myNodeList.length; i++) {
-    //       `myNodeList[i].style.${targetStyle} = ${cssValues}`;
-    //     }
-    //   };
-
-    //   //   //
-    //   //   //
-    //   //   //
-    //   const RedBtn = document.getElementById("red");
-    //   // const OrangeBtn = document.getElementById("orange");
-    //   // const YellowBtn = document.getElementById("yellow");
-    //   // const GreenBtn = document.getElementById("green");
-    //   // const BlueBtn = document.getElementById("blue");
-
-    //   RedBtn.onclick = () => {
-    //     testFunction(red, plainRgba, classNames[0], "backgroundColor");
-    //   };
-    //   colourThemeFunc();
-    /*attempt at optimized version of this */
-    /** **/
-    /** **/
-    /** **/
-    /** **/
-    /** **/
-
-    /*Unoptimized method of colour change */
-    /* */
-    /* */
     /* */
     /* */
     //start of colour theme change
