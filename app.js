@@ -313,5 +313,113 @@ document.addEventListener("DOMContentLoaded", function () {
     /*colour-change-test-code */
   };
   changeColourTheme();
+  //
+  //
+  //
+  /*slot-machine effect with mimic-typing-effeect */
+  const img_looping_effect = () => {
+    const firstbox = document.getElementById("box-first-child");
+    const secondbox = document.getElementById("box-second-child");
+    const thirdbox = document.getElementById("box-third-child");
+
+    const imageContainer = [firstbox, secondbox, thirdbox];
+
+    const imageUrls = [
+      "../rock-paper-scissors/img/rock-final.png",
+      "../rock-paper-scissors/img/hand-final.png",
+      "../rock-paper-scissors/img/scissors-final.png",
+    ];
+    //
+    //
+    //
+    //forLoop user input
+    const repeatForLoop = (targetIndex) => {
+      /*****declaring promise******/
+      return new Promise((resolve, reject) => {
+        const success = true;
+        if (success) {
+          console.log("repeatForLoop function");
+          resolve();
+        } else {
+          const error = new Error("SOmething Went Wrong");
+          reject(error);
+        }
+        const displayTime = 60;
+        const offsetTimer = 5;
+        //forLoop to stagger iterating through imageContainer arr
+        for (let i = 0; i < imageContainer.length; i++) {
+          const updatedDelay = offsetTimer * i;
+          const numLoops = i + 2;
+          //numLoops is current iteration(1,2 or 3) depending on current index of slotboxes
+          const imgArrLength = imageUrls.length;
+
+          //forLoop to iterate through image folder and land on target index
+          for (let j = 0; j < imgArrLength * numLoops; j++) {
+            //setTimeout Function to stagger the slot box starst time
+            setTimeout(() => {
+              //j is now length of imgUrls.length TIMES num loops
+              const currentImageUrlIndex = j % imgArrLength;
+              //using modulator because 4/3 = 1 and 5/3 = 2 so it's effective for cycling or looping
+              imageContainer[i].innerHTML = `<img src= "${
+                imageUrls[(currentImageUrlIndex + targetIndex) % imgArrLength]
+              }" alt="Please Reload App"> `;
+              /*Using the .innerHTML property to set thhe template literal of
+              each slot box(which is imageContainer[i]) */
+            }, j * displayTime + updatedDelay);
+          }
+        }
+      });
+      /*****end of promise set up*****/
+    };
+    /*End of repeatForLoop func */
+    //
+    //
+    //
+    /*beginning of onLoadForLoop */
+    const onLoadForLoop = () => {
+      const displayTime = 80;
+
+      const offsetTimer = 100;
+      for (let i = 0; i < imageContainer.length; i++) {
+        const updatedDelay = offsetTimer * i;
+        const slowDisplayTime = i * 5; // slow down factor variable
+        const updatedDisplayTime = displayTime + slowDisplayTime; // each successive container will have slower display time
+        const numLoops = i + 4;
+        const imgArrLength = imageUrls.length;
+
+        for (let j = 0; j < imgArrLength * numLoops; j++) {
+          setTimeout(() => {
+            const nextIndex = i + imgArrLength; // literally just adding the current idex the loop is on to imageUrls.length
+            // const currentImageUrlIndex = j; at j it shows scissors paper rock
+            const currentImageUrlIndex = j + 1; // shows rock paper scissors
+
+            imageContainer[i].innerHTML = `<img src= "${
+              imageUrls[(currentImageUrlIndex + nextIndex) % imgArrLength]
+            }" alt="Please Reload App">`;
+          }, j * updatedDisplayTime + updatedDelay);
+        }
+      }
+    };
+    /*end of onLoadForLoop */
+    const loopTriggerRock = document.getElementById("loop-trigger-rock");
+    const loopTriggerPaper = document.getElementById("loop-trigger-paper");
+    const loopTriggerScissors = document.getElementById(
+      "loop-trigger-scissors"
+    );
+
+    loopTriggerRock.addEventListener("click", () => {
+      repeatForLoop(1);
+    });
+    //
+    loopTriggerPaper.onclick = () => {
+      repeatForLoop(2);
+    };
+    //
+    loopTriggerScissors.onclick = () => {
+      repeatForLoop(3);
+    };
+    window.onload = onLoadForLoop;
+  };
+  img_looping_effect();
   // };
 });
