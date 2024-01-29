@@ -260,9 +260,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageContainer = [firstbox, secondbox, thirdbox];
 
     const imageUrls = [
-      "../rock-paper-scissors/img/rock-final.png",
-      "../rock-paper-scissors/img/hand-final.png",
-      "../rock-paper-scissors/img/scissors-final.png",
+      '<img src="../rock-paper-scissors/img/rock-final.png" alt="Please Reload App">',
+      '<img src="../rock-paper-scissors/img/hand-final.png" alt="Please Reload App">',
+      '<img src="../rock-paper-scissors/img/scissors-final.png" alt="Please Reload App" style="height: 65%; width: auto;">',
     ];
     //
     //
@@ -295,9 +295,9 @@ document.addEventListener("DOMContentLoaded", function () {
               //j is now length of imgUrls.length TIMES num loops
               const currentImageUrlIndex = j % imgArrLength;
               //using modulator because 4/3 = 1 and 5/3 = 2 so it's effective for cycling or looping
-              imageContainer[i].innerHTML = `<img src= "${
+              imageContainer[i].innerHTML = `${
                 imageUrls[(currentImageUrlIndex + targetIndex) % imgArrLength]
-              }" alt="Please Reload App"> `;
+              }`;
               /*Using the .innerHTML property to set thhe template literal of
               each slot box(which is imageContainer[i]) */
             }, j * displayTime + updatedDelay);
@@ -328,9 +328,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // const currentImageUrlIndex = j; at j it shows scissors paper rock
             const currentImageUrlIndex = j + 1; // shows rock paper scissors
 
-            imageContainer[i].innerHTML = `<img src= "${
+            imageContainer[i].innerHTML = `${
               imageUrls[(currentImageUrlIndex + nextIndex) % imgArrLength]
-            }" alt="Please Reload App">`;
+            }`;
           }, j * updatedDisplayTime + updatedDelay);
         }
       }
