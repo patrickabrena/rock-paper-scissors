@@ -260,8 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageContainer = [firstbox, secondbox, thirdbox];
 
     const imageUrls = [
-      '<img src="../rock-paper-scissors/img/rock-final.png" alt="Please Reload App">',
-      '<img src="../rock-paper-scissors/img/hand-final.png" alt="Please Reload App">',
+      '<img src="../rock-paper-scissors/img/rock-final.png" alt="Please Reload App" style="height: auto; width: 70%;">',
+      '<img src="../rock-paper-scissors/img/hand-final.png" alt="Please Reload App" style="height: 65%; width: auto;">',
       '<img src="../rock-paper-scissors/img/scissors-final.png" alt="Please Reload App" style="height: 65%; width: auto;">',
     ];
     //
