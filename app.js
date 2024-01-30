@@ -343,6 +343,19 @@ document.addEventListener("DOMContentLoaded", function () {
     //
     //
     //
+    /*start of CPU random output */
+    /*APPROACH
+      - create randomNum within a range function suing math.floor and math.random
+      - insert that function in imageContainer[func]
+      - use .innerHTML inside .onlick triggers to show output of cpu */
+    const cpuRandomOutput = () => {
+      return Math.floor(Math.random() * 3);
+    };
+    // console.log(cpuRandomOutput());
+    /*end of CPU random output */
+    //
+    //
+    //
     /* declaring loopTriggers */
     const loopTriggerRock = document.getElementById("loop-trigger-rock");
     const loopTriggerPaper = document.getElementById("loop-trigger-paper");
@@ -351,19 +364,19 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     loopTriggerRock.addEventListener("click", () => {
-      repeatForLoop(1);
+      repeatForLoop(cpuRandomOutput());
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[0]}`;
     });
     //
     loopTriggerPaper.onclick = () => {
-      repeatForLoop(2);
+      repeatForLoop(cpuRandomOutput());
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[1]}`;
     };
     //
     loopTriggerScissors.onclick = () => {
-      repeatForLoop(3);
+      repeatForLoop(cpuRandomOutput());
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[2]}`;
     };
