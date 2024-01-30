@@ -284,7 +284,6 @@ img {
   position: absolute;
   width: 75%;
   height: 75%;
-  border: 1px solid white;
 }
 .three-rows:nth-child(3)
   .two-coloumns:nth-child(1)

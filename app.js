@@ -257,10 +257,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const secondbox = document.getElementById("box-second-child");
     const thirdbox = document.getElementById("box-third-child");
 
+    /*selection box & hidden selection*/
+    const selectionBox = document.getElementById("selection-box");
+    const hiddenSelection = document.getElementById("reveal");
+
     const imageContainer = [firstbox, secondbox, thirdbox];
 
     const imageUrls = [
-      '<img src="../rock-paper-scissors/img/rock-final.png" alt="Please Reload App" style="height: auto; width: 70%;">',
+      '<img src="../rock-paper-scissors/img/rock-final.png" alt="Please Reload App" style="height: auto; width: 65%;">',
       '<img src="../rock-paper-scissors/img/hand-final.png" alt="Please Reload App" style="height: 65%; width: auto;">',
       '<img src="../rock-paper-scissors/img/scissors-final.png" alt="Please Reload App" style="height: 65%; width: auto;">',
     ];
@@ -336,6 +340,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
     /*end of onLoadForLoop */
+    //
+    //
+    //
+    /* declaring loopTriggers */
     const loopTriggerRock = document.getElementById("loop-trigger-rock");
     const loopTriggerPaper = document.getElementById("loop-trigger-paper");
     const loopTriggerScissors = document.getElementById(
@@ -344,14 +352,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loopTriggerRock.addEventListener("click", () => {
       repeatForLoop(1);
+      hiddenSelection.setAttribute("data-visible", true);
+      selectionBox.innerHTML = `${imageUrls[0]}`;
     });
     //
     loopTriggerPaper.onclick = () => {
       repeatForLoop(2);
+      hiddenSelection.setAttribute("data-visible", true);
+      selectionBox.innerHTML = `${imageUrls[1]}`;
     };
     //
     loopTriggerScissors.onclick = () => {
       repeatForLoop(3);
+      hiddenSelection.setAttribute("data-visible", true);
+      selectionBox.innerHTML = `${imageUrls[2]}`;
     };
     window.onload = onLoadForLoop;
   };
