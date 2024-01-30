@@ -370,9 +370,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     //
     loopTriggerPaper.onclick = () => {
-      repeatForLoop(cpuRandomOutput());
+      let data = repeatForLoop(cpuRandomOutput());
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[1]}`;
+      console.log(data);
     };
     //
     loopTriggerScissors.onclick = () => {
@@ -383,5 +384,17 @@ document.addEventListener("DOMContentLoaded", function () {
     window.onload = onLoadForLoop;
   };
   img_looping_effect();
+  ///
+  ///
+  ///
+  // const result = () => {
+  //   if (data === 0) {
+  //     console.log("draw");
+  //   } else {
+  //     console.log("N/A");
+  //   }
+  // };
+  // result();
+
   // };
 });
