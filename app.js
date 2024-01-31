@@ -348,11 +348,44 @@ document.addEventListener("DOMContentLoaded", function () {
       - create randomNum within a range function suing math.floor and math.random
       - insert that function in imageContainer[func]
       - use .innerHTML inside .onlick triggers to show output of cpu */
-    const cpuRandomOutput = () => {
-      return Math.floor(Math.random() * 3);
+    const cpuRandomOutput = (low, high) => {
+      return Math.floor(Math.random() * (high - low + 1) + low);
     };
     // console.log(cpuRandomOutput());
     /*end of CPU random output */
+    //
+    //
+    //
+    /*start of mimic typing effect after promise fufilled */
+    const mimicTypingEffect = (message) => {
+      const typingContainer = document.getElementById("typing-container");
+
+      const typeMessage = (text, index) => {
+        if (index < message.length) {
+          typingContainer.textContent = text.substring(0, index + 1);
+          /*
+          const originalString = "Hello, World!";
+          const substring1 = originalString.substring(0, 5); // Extracts "Hello"
+          const substring2 = originalString.substring(7);    // Extracts "World!"
+          const substring3 = originalString.substring(7, 12); // Extracts "World
+  
+          In the examples above:
+  
+          substring1 extracts characters from index 0 to 4 (inclusive), resulting in "Hello".
+          substring2 extracts characters from index 7 to the end of the string, resulting in "World!".
+          substring3 extracts characters from index 7 to 11 (inclusive), resulting in "World".
+  
+  
+           */
+          setTimeout(() => {
+            typeMessage(text, index + 1);
+          }, 69); // Adjust the timeout to control typing speed
+        }
+      };
+
+      typeMessage(message, 0);
+    };
+    /*end of mimic typing effect after promise fufilled */
     //
     //
     //
@@ -364,22 +397,96 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     loopTriggerRock.addEventListener("click", () => {
-      repeatForLoop(cpuRandomOutput());
+      let data = cpuRandomOutput(1, 3);
+      repeatForLoop(data)
+        .then(() => {
+          console.log("Code to be executed after repeatForLoop is done");
+          setTimeout(() => {
+            console.log("delayed execution response");
+            if (data == 1) {
+              console.log("draw");
+              mimicTypingEffect("DRAW");
+            } else if (data == 2) {
+              console.log("lose");
+              mimicTypingEffect("YOU LOSE");
+            } else if (data == 3) {
+              console.log("win");
+              mimicTypingEffect("YOU WIN");
+            }
+          }, 690);
+        })
+        .catch((error) => {
+          console.error("an error occurred:", error);
+        });
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[0]}`;
+      let userChoice = document.getElementById("user-choice");
+      userChoice.innerHTML = "YOU PICKED ROCK";
+      // console.log(data);
+      //
+      //
+
+      //
+      //
+      //
     });
     //
     loopTriggerPaper.onclick = () => {
-      let data = repeatForLoop(cpuRandomOutput());
+      let data = cpuRandomOutput(1, 3);
+      repeatForLoop(data)
+        .then(() => {
+          console.log("Code to be executed after repeatForLoop is done");
+          setTimeout(() => {
+            console.log("delayed execution response");
+            if (data == 2) {
+              console.log("draw");
+              mimicTypingEffect("DRAW");
+            } else if (data == 3) {
+              console.log("lose");
+              mimicTypingEffect("YOU LOSE");
+            } else if (data == 1) {
+              console.log("win");
+              mimicTypingEffect("YOU WIN");
+            }
+          }, 690);
+        })
+        .catch((error) => {
+          console.error("an error occurred:", error);
+        });
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[1]}`;
-      console.log(data);
+      let userChoice = document.getElementById("user-choice");
+      userChoice.innerHTML = "YOU PICKED PAPER";
+      // console.log(data);
     };
     //
     loopTriggerScissors.onclick = () => {
-      repeatForLoop(cpuRandomOutput());
+      let data = cpuRandomOutput(1, 3);
+      repeatForLoop(data)
+        .then(() => {
+          console.log("Code to be executed after repeatForLoop is done");
+          setTimeout(() => {
+            console.log("delayed execution response");
+            if (data == 3) {
+              console.log("draw");
+              mimicTypingEffect("DRAW");
+            } else if (data == 1) {
+              console.log("lose");
+              mimicTypingEffect("YOU LOSE");
+            } else if (data == 2) {
+              console.log("win");
+              mimicTypingEffect("YOU WIN");
+            }
+          }, 690);
+        })
+        .catch((error) => {
+          console.error("an error occurred:", error);
+        });
       hiddenSelection.setAttribute("data-visible", true);
       selectionBox.innerHTML = `${imageUrls[2]}`;
+      let userChoice = document.getElementById("user-choice");
+      userChoice.innerHTML = "YOU PICKED SCISSORS";
+      // console.log(data);
     };
     window.onload = onLoadForLoop;
   };
@@ -387,14 +494,4 @@ document.addEventListener("DOMContentLoaded", function () {
   ///
   ///
   ///
-  // const result = () => {
-  //   if (data === 0) {
-  //     console.log("draw");
-  //   } else {
-  //     console.log("N/A");
-  //   }
-  // };
-  // result();
-
-  // };
 });
