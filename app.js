@@ -395,14 +395,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const loopTriggerScissors = document.getElementById(
       "loop-trigger-scissors"
     );
-    //reusable function for cpuOutput string
+    //reusable function for cpuOutput string and typingOutput
+    const typingContainer = document.getElementById("typing-container");
+    const typingOutput = (string) => {
+      typingContainer.innerHTML = string;
+    };
     let cpuChoice = document.getElementById("cpu-choice");
     const cpuOutput = (string) => {
       cpuChoice.innerHTML = string;
     };
 
     loopTriggerRock.addEventListener("click", () => {
+      typingOutput("");
       cpuOutput("");
+      typingContainer;
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
         .then(() => {
@@ -435,6 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     //
     loopTriggerPaper.onclick = () => {
+      typingOutput("");
       cpuOutput("");
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
@@ -468,6 +475,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     //
     loopTriggerScissors.onclick = () => {
+      typingOutput("");
       cpuOutput("");
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
