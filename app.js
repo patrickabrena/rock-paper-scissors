@@ -395,8 +395,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const loopTriggerScissors = document.getElementById(
       "loop-trigger-scissors"
     );
+    //reusable function for cpuOutput string
+    let cpuChoice = document.getElementById("cpu-choice");
+    const cpuOutput = (string) => {
+      cpuChoice.innerHTML = string;
+    };
 
     loopTriggerRock.addEventListener("click", () => {
+      cpuOutput("");
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
         .then(() => {
@@ -406,12 +412,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data == 1) {
               console.log("draw");
               mimicTypingEffect("DRAW");
+              cpuOutput("CPU PICKED ROCK");
             } else if (data == 2) {
               console.log("lose");
               mimicTypingEffect("YOU LOSE");
+              cpuOutput("CPU PICKED PAPER");
             } else if (data == 3) {
               console.log("win");
               mimicTypingEffect("YOU WIN");
+              cpuOutput("CPU PICKED SCISSORS");
             }
           }, 690);
         })
@@ -423,15 +432,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let userChoice = document.getElementById("user-choice");
       userChoice.innerHTML = "YOU PICKED ROCK";
       // console.log(data);
-      //
-      //
-
-      //
-      //
-      //
     });
     //
     loopTriggerPaper.onclick = () => {
+      cpuOutput("");
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
         .then(() => {
@@ -441,12 +445,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data == 2) {
               console.log("draw");
               mimicTypingEffect("DRAW");
+              cpuOutput("CPU PICKED PAPER");
             } else if (data == 3) {
               console.log("lose");
               mimicTypingEffect("YOU LOSE");
+              cpuOutput("CPU PICKED SCISSORS");
             } else if (data == 1) {
               console.log("win");
               mimicTypingEffect("YOU WIN");
+              cpuOutput("CPU PICKED ROCK");
             }
           }, 690);
         })
@@ -461,6 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     //
     loopTriggerScissors.onclick = () => {
+      cpuOutput("");
       let data = cpuRandomOutput(1, 3);
       repeatForLoop(data)
         .then(() => {
@@ -470,12 +478,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data == 3) {
               console.log("draw");
               mimicTypingEffect("DRAW");
+              cpuOutput("CPU PICKED SCISSORS");
             } else if (data == 1) {
               console.log("lose");
               mimicTypingEffect("YOU LOSE");
+              cpuOutput("CPU PICKED ROCK");
             } else if (data == 2) {
               console.log("win");
               mimicTypingEffect("YOU WIN");
+              cpuOutput("CPU PICKED PAPER");
             }
           }, 690);
         })
