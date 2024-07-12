@@ -3,4 +3,6 @@
 link to demo:
 https://patrickabrena.github.io/rock-paper-scissors/
 
-Slot machine effect visualizer incorportated in rock, paper, scissors to demonstrate understanding of Javascript
+Welcome to my slot machine effect visualizer incorporated in rock, paper, scissors. 
+This project demonstrates proficiency in HTML, CSS, and Javascript.
+
